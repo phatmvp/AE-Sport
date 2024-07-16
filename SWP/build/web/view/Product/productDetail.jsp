@@ -201,7 +201,79 @@
                         </div>
 
                         <div class="tab-pane fade show " id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">${productDetail.description}</div>
-                        <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">.dsfdsfsdfsdfsd..</div>
+                        <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
+
+                            <div class="row">
+                                <div class="col-md-8">
+
+                                    <!-- Form tìm kiếm -->
+                                    <h1 class="mb-4">Phản Hồi</h1>
+
+                                    <table class="table table-bordered table-striped">
+                                        <thead class="thead-dark">
+                                            <tr>
+                                                <th>User</th>
+                                                <th>Đánh Giá Chi Tiết</th>
+                                                <th>Hình Ảnh</th>
+                                                <th>Số Sao</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <c:forEach var="fbl" items="${listbyproID}">
+                                                <tr>
+                                                    <td>${fbl.username}</td>
+                                                    <td>${fbl.detal}</td>
+                                                    <td><img src="img/product/${fbl.img}" alt="Feedback Image" class="img-thumbnail" style="max-width: 150px;"></td>
+                                                    <td>
+                                                        <div class="d-flex align-items-center">
+                                                            <c:forEach var="i" begin="1" end="${fbl.start}">
+                                                                <span class="yellow-star">&#9733;</span>
+                                                            </c:forEach>
+                                                            <c:forEach var="i" begin="${fbl.start + 1}" end="5">
+                                                                <span class="grey-star">&#9733;</span>
+                                                            </c:forEach>
+                                                            <p class="mb-0 ml-2">(${fbl.start}/5)</p>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </c:forEach>
+                                        </tbody>
+                                    </table> 
+
+                                    <div class="card feedback-card">
+                                        <div class="card-header bg-primary text-white">
+                                            <h5 class="card-title mt-2">Đánh Giá</h5>
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="text-center">
+                                                <i class="far fa-file-alt feedback-icon mb-3"></i>
+                                                <p><strong>Ý kiến của bạn rất quan trọng</strong></p>
+                                                <p>Có một số ý tưởng về cách cải thiện sản phẩm của chúng tôi?  <strong>Hãy cho chúng tôi phản hồi của bạn.</strong></p>
+                                            </div>
+                                            <hr />
+                                            <form class="px-4" action="feedback1" method="POST">
+                                                <div class="mb-3">
+                                                    <p class="text-center"><strong>Chọn Sao</strong></p>
+                                                    <select class="form-select" aria-label="Default select example" name="rating" id="rating" style="color: yellow;">
+                                                        <option value="5">&#9733; &#9733; &#9733; &#9733; &#9733; 5 Sao</option>
+                                                        <option value="4">&#9733; &#9733; &#9733; &#9733; 4 Sao</option>
+                                                        <option value="3">&#9733; &#9733; &#9733; 3 Sao</option>
+                                                        <option value="2">&#9733; &#9733; 2 Sao</option>
+                                                        <option value="1">&#9733; 1 Sao</option>
+                                                    </select>
+                                                </div>
+                                                <p class="text-center"><strong>Chúng tôi có thể cải thiện điều gì?</strong></p>
+                                                <div data-mdb-input-init class="form-outline mb-4">
+                                                    <textarea class="form-control" id="form4Example3" name="feedback" rows="4"></textarea>
+                                                    <label class="form-label" for="form4Example3">Phản hồi của bạn</label>
+                                                </div>
+                                                <button type="submit" class="btn btn-primary">Gửi</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div></div>
                     </div>
                 </div>
             </div>

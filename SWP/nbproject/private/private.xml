@@ -3,13 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/Git/AE-Sport/SWP/web/view/HomePage/footer.jsp</file>
-            <file>file:/D:/Git/AE-Sport/SWP/web/view/HomePage/header.jsp</file>
-            <file>file:/D:/Git/AE-Sport/SWP/web/view/HomePage/Setting.jsp</file>
-            <file>file:/D:/Git/AE-Sport/SWP/web/view/HomePage/homePage.jsp</file>
-            <file>file:/D:/Git/AE-Sport/SWP/src/java/data/SettingContext.java</file>
-            <file>file:/D:/Git/AE-Sport/SWP/src/java/controllerr/HomePage.java</file>
-            <file>file:/D:/Git/AE-Sport/SWP/src/java/controllerr/Setting.java</file>
+            <file>file:/C:/Users/Admin/Desktop/phamvp/AE-Sport/SWP/src/java/controllerr/ProductController.java</file>
+            <file>file:/C:/Users/Admin/Desktop/phamvp/AE-Sport/SWP/src/java/DBContext/DAOProduct.java</file>
+            <file>file:/C:/Users/Admin/Desktop/phamvp/AE-Sport/SWP/src/java/controllerr/ViewProductBybutton.java</file>
+            <file>file:/C:/Users/Admin/Desktop/phamvp/AE-Sport/SWP/web/view/Product/productDetail.jsp</file>
+            <file>file:/C:/Users/Admin/Desktop/phamvp/AE-Sport/SWP/web/WEB-INF/web.xml</file>
+            <file>file:/C:/Users/Admin/Desktop/phamvp/AE-Sport/SWP/web/view/Productcate.jsp</file>
         </group>
     </open-files>
 </project-private>

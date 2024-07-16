@@ -119,6 +119,10 @@
                         </li>
                         <span>&#124;</span>
                         <li class="mx-4">
+                            <a href="productall" class="font-monospace text-decoration-none text-white">Tất Cả Sản Phẩm</a>
+                        </li>
+                        <span>&#124;</span>
+                        <li class="mx-4">
                             <a href="choosesize" class="font-monospace text-decoration-none text-white">Cách Chọn Size</a>
                         </li>
                         <span>&#124;</span>

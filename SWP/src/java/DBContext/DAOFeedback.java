@@ -122,5 +122,28 @@ public class DAOFeedback extends DBContext {
         }
         return fb;
     }
+    
+    public List<Feedback> getFeedbackByProductId(int product_ID) {
+        List<Feedback> feedbackList = new ArrayList<>();
+        try {
+            String sql = "SELECT * FROM Feedback\n"
+                    + "JOIN UserAccounts ON Feedback.user_ID = UserAccounts.user_ID\n"
+                    + "WHERE Feedback.product_ID = ?";
+            PreparedStatement stm = connection.prepareStatement(sql);
+            stm.setInt(1, product_ID);
+            ResultSet rs = stm.executeQuery();
+            while (rs.next()) {
+                Feedback feedback = new Feedback();
+                feedback.setUsername(rs.getString("username"));
+                feedback.setDetal(rs.getString("detal"));
+                feedback.setImg(rs.getString("img"));
+                feedback.setStart(rs.getInt("start"));
+                feedbackList.add(feedback);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(DAOFeedback.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return feedbackList;
+    }
 }
 
