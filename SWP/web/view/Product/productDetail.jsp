@@ -242,7 +242,7 @@
 
                                     <div class="card feedback-card">
                                         <div class="card-header bg-primary text-white">
-                                            <h5 class="card-title mt-2">Đánh Giá</h5>
+                                            <h5 class="card-title mt-2">Ý Kiến Của Bạn</h5>
                                         </div>
                                         <div class="card-body">
                                             <div class="text-center">
