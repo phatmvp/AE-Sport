@@ -3,11 +3,19 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Admin/Desktop/phamvp/AE-Sport/SWP/src/java/controllerr/ProductController.java</file>
             <file>file:/C:/Users/Admin/Desktop/phamvp/AE-Sport/SWP/src/java/DBContext/DAOProduct.java</file>
+            <file>file:/C:/Users/Admin/Desktop/phamvp/AE-Sport/SWP/web/view/HomePage/header.jsp</file>
             <file>file:/C:/Users/Admin/Desktop/phamvp/AE-Sport/SWP/src/java/controllerr/ViewProductBybutton.java</file>
-            <file>file:/C:/Users/Admin/Desktop/phamvp/AE-Sport/SWP/web/view/Product/productDetail.jsp</file>
-            <file>file:/C:/Users/Admin/Desktop/phamvp/AE-Sport/SWP/web/WEB-INF/web.xml</file>
+            <file>file:/C:/Users/Admin/Desktop/phamvp/AE-Sport/SWP/src/java/controllerr/ProductDetail.java</file>
+            <file>file:/C:/Users/Admin/Desktop/phamvp/AE-Sport/SWP/web/view/HomePage/footer.jsp</file>
+            <file>file:/C:/Users/Admin/Desktop/phamvp/AE-Sport/SWP/web/view/HomePage/introductionBrand.jsp</file>
+            <file>file:/C:/Users/Admin/Desktop/phamvp/AE-Sport/SWP/src/java/controllerr/introductionBrand.java</file>
+            <file>file:/C:/Users/Admin/Desktop/phamvp/AE-Sport/SWP/src/java/controllerr/ProductbyCategory.java</file>
+            <file>file:/C:/Users/Admin/Desktop/phamvp/AE-Sport/SWP/src/java/controllerr/ProductController.java</file>
+            <file>file:/C:/Users/Admin/Desktop/phamvp/AE-Sport/SWP/web/view/orderingguide.jsp</file>
+            <file>file:/C:/Users/Admin/Desktop/phamvp/AE-Sport/SWP/src/java/oderview.java</file>
+            <file>file:/C:/Users/Admin/Desktop/phamvp/AE-Sport/SWP/src/java/controllerr/SearchProduct.java</file>
+            <file>file:/C:/Users/Admin/Desktop/phamvp/AE-Sport/SWP/web/view/HomePage/homePage.jsp</file>
             <file>file:/C:/Users/Admin/Desktop/phamvp/AE-Sport/SWP/web/view/Productcate.jsp</file>
         </group>
     </open-files>

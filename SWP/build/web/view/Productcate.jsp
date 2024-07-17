@@ -261,24 +261,23 @@
                                     </a>
                                 </div>
                             </div>
-                            <c:if test="${loop.index % 4 == 3}">
-                            </div>
-                            <div class="row">
-                            </c:if>
                         </c:forEach>
                     </div>
 
-                    <nav aria-label="Page navigation">
-                        <ul class="pagination justify-content-center">
-                            <c:forEach begin="1" end="${endPage}" var="i">
-                                <li class="page-item"><a class="page-link" href="productall?index=${i}">${i}</a></li>
-                                </c:forEach>
-                        </ul>
-                    </nav>
+
                 </div>
+
+                <nav aria-label="Page navigation">
+                    <ul class="pagination justify-content-center">
+                        <c:forEach begin="1" end="${endPage}" var="i">
+                            <li class="page-item"><a class="page-link" href="productall?index=${i}">${i}</a></li>
+                            </c:forEach>
+                    </ul>
+                </nav>
             </div>
         </div>
+    </div>
 
-    </body>
+</body>
 </html>
 

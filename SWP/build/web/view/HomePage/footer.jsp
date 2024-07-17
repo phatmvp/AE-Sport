@@ -64,42 +64,42 @@
                 <div class="d-flex flex-column mt-3">
                     <i class="bi bi-fast-forward p-2"
                        ><a
-                            href=""
+                            href="/SWP/oderview"
                             class="ms-4 text-white text-decoration-none text-opacity-75"
                             >Hướng dẫn đặt hàng</a
                         ></i
                     >
                     <i class="bi bi-fast-forward p-2"
                        ><a
-                            href=""
+                            href="/SWP/choosesize"
                             class="ms-4 text-white text-decoration-none text-opacity-75"
                             >Hướng dẫn chọn size</a
                         ></i
                     >
                     <i class="bi bi-fast-forward p-2"
                        ><a
-                            href=""
+                            href="/SWP/help/support.jsp"
                             class="ms-4 text-white text-decoration-none text-opacity-75"
                             >Câu hỏi thường gặp</a
                         ></i
                     >
                     <i class="bi bi-fast-forward p-2"
                        ><a
-                            href=""
+                            href="/SWP/help/support.jsp"
                             class="ms-4 text-white text-decoration-none text-opacity-75"
                             >Chính sách đổi hàng</a
                         ></i
                     >
                     <i class="bi bi-fast-forward p-2"
                        ><a
-                            href=""
+                            href="/SWP/help/support.jsp"
                             class="ms-4 text-white text-decoration-none text-opacity-75"
                             >Thanh toán - Giao hàng</a
                         ></i
                     >
                     <i class="bi bi-fast-forward p-2"
                        ><a
-                            href=""
+                            href="/SWP/help/support.jsp"
                             class="ms-4 text-white text-decoration-none text-opacity-75"
                             >Chính sách đổi hàng</a
                         ></i
