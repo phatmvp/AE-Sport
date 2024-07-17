@@ -106,7 +106,7 @@
             ArrayList<Category> listCateFemale = cateDB.getCategorys("nu");
             ArrayList<Category> listCateAccessory = cateDB.getCategorys("phu_kien");
             SettingContext settingDB = new SettingContext();
-            String logo = settingDB.getLogo();
+            String logo = settingDB.getLogo("logoh");
         %>
     </head>
     <body>

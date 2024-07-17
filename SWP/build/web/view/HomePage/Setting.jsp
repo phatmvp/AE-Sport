@@ -34,11 +34,12 @@
                 <jsp:include page="../Homestaff/SideBar.jsp"/>
             </div>
             <div class="col-11">
-                <div class="container   mt-5 ">
+                <div class="container   mt-5  bg-body-tertiary">
 
-                    <h2>Logo:</h2>
-                    <img src="img/logo/${requestScope.logo}" class="img-thumbnail  " alt=""   width="180"
+                    <h2>Logo Header:</h2>
+                    <img src="img/logo/${requestScope.logoh}" class="img-thumbnail  " alt=""   width="180"
                          height="150" >
+
                     <button  type="submit" class="btn btn-outline-success   " data-bs-toggle="modal" data-bs-target="#addImg0">Sửa</button>
 
                     <form method="post" action="Setting">
@@ -50,7 +51,7 @@
                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body">
-                                        <input type="hidden" name="logo" value="logo"/>
+                                        <input type="hidden" name="logo" value="logoh"/>
                                         <input type="file" name="img"/>
                                     </div>
                                     <div class="modal-footer">
@@ -63,7 +64,37 @@
                     </form>
 
 
-                    <div class="bg-body-tertiary">
+
+                    <h2>Logo Footer</h2>
+                    <img src="img/logo/${requestScope.logof}" class="img-thumbnail  " alt=""   width="180"
+                         height="150" >
+
+                    <button  type="submit" class="btn btn-outline-success   " data-bs-toggle="modal" data-bs-target="#addImg">Sửa</button>
+
+                    <form method="post" action="Setting">
+                        <div class="modal fade" id="addImg" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-5" id="exampleModalLabel">Sửa Logo</h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <input type="hidden" name="logo" value="logof"/>
+                                        <input type="file" name="img"/>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Dóng</button>
+                                        <button type="submit" class="btn btn-primary">Sửa</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+
+
+
+                    <div >
 
                         <div class="my-5 ">
                             <button  type="submit" class="btn btn-outline-success float-end  " data-bs-toggle="modal" data-bs-target="#addImg1">Thêm</button>

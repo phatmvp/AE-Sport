@@ -13,27 +13,27 @@ import java.util.Map;
 
 /**
  *
-
+ *
  */
-public class AccountDAO extends DBContext{
-  
-    public boolean UpdateProfile(UserAccount user) {    
+public class AccountDAO extends DBContext {
+
+    public boolean UpdateProfile(UserAccount user) {
         String sql = "UPDATE UserAccounts SET full_name = ?, email = ?, phone_number = ?, address = ? where user_ID = ?";
         try {
             PreparedStatement st = connection.prepareStatement(sql);
             st.setString(1, user.getFull_Name());
             st.setString(2, user.getEmail());
             st.setString(3, user.getPhone_number());
-           st.setString(4, user.getAddress());
+            st.setString(4, user.getAddress());
             st.setInt(5, user.getUse_ID());
-                return st.executeUpdate() > 0;
+            return st.executeUpdate() > 0;
         } catch (SQLException e) {
             System.err.println(e);
         }
         return false;
     }
-    
-    public UserAccount CheckLogin(String userName,String password) {
+
+    public UserAccount CheckLogin(String userName, String password) {
         String sql = "SELECT * FROM [dbo].[UserAccounts] where username = ? AND password_hash = ?";
         try {
             PreparedStatement st = connection.prepareStatement(sql);
@@ -42,12 +42,12 @@ public class AccountDAO extends DBContext{
             ResultSet rs = st.executeQuery();
             if (rs.next()) {
                 UserAccount user = new UserAccount(rs.getInt("user_ID"),
-                       rs.getString("address"),
                         rs.getString("password_hash"),
                         rs.getString("username"),
                         rs.getString("full_name"),
                         rs.getString("email"),
-                        rs.getString("phone_number")
+                        rs.getString("phone_number"),
+                        rs.getString("address")
                 );
                 return user;
             }
@@ -57,14 +57,12 @@ public class AccountDAO extends DBContext{
         return null;
     }
 
-
-    
     public int insertUserAccount(UserAccount u) {
         int newId = 0;
         try {
             String sql = "insert into [UserAccounts]([address],[password_hash],[username],[full_name],[email],[phone_number],[status]) values(?,?,?,?,?,?,'active')";
             PreparedStatement st = connection.prepareStatement(sql, PreparedStatement.RETURN_GENERATED_KEYS);
-           st.setString(1, u.getAddress());
+            st.setString(1, u.getAddress());
             st.setString(2, u.getPassword());
             st.setString(3, u.getUserName());
             st.setString(4, u.getFull_Name());
@@ -75,19 +73,19 @@ public class AccountDAO extends DBContext{
             if (affectedRows > 0) {
                 try (ResultSet generatedKeys = st.getGeneratedKeys()) {
                     if (generatedKeys.next()) {
-                        newId = (int)generatedKeys.getLong(1);
+                        newId = (int) generatedKeys.getLong(1);
                     } else {
                         throw new SQLException("Creating account failed, no ID obtained.");
                     }
                 }
             }
-            return  newId;
+            return newId;
         } catch (Exception e) {
             System.out.println(e);
         }
         return 0;
     }
-    
+
     public boolean validateUserName(String userName) {
         String sql = "SELECT * FROM [dbo].[UserAccounts] where username = ? ";
         try {
@@ -100,7 +98,7 @@ public class AccountDAO extends DBContext{
         }
         return false;
     }
-    
+
     public void updateUserAccount(String newpass, int userId) {
         try {
             String sql = " UPDATE [UserAccounts] SET [password_hash] = ? WHERE [user_ID] = ?";
@@ -113,14 +111,14 @@ public class AccountDAO extends DBContext{
             System.out.println(e);
         }
     }
-    
-    public int GetAccountByEmail(String email){
+
+    public int GetAccountByEmail(String email) {
         String sql = "SELECT * FROM [dbo].[UserAccounts] where email = ? ";
         try {
             PreparedStatement st = connection.prepareStatement(sql);
             st.setString(1, email);
             ResultSet rs = st.executeQuery();
-            if(rs.next()){
+            if (rs.next()) {
                 return rs.getInt("user_ID");
             }
             return 0;
@@ -129,35 +127,36 @@ public class AccountDAO extends DBContext{
         }
         return 0;
     }
-    public String getAddress(int userId) {
-    String address = null;
-    String sql = "SELECT [address] FROM [dbo].[UserAddresses] WHERE [user_ID] = ?";
-    try {
-           PreparedStatement st = connection.prepareStatement(sql);
-        st.setInt(1, userId);
-        ResultSet rs = st.executeQuery();
-        if (rs.next()) {
-            address = rs.getString("address");
-        }
-    } catch (SQLException e) {
-        System.out.println(e);
-    }
-    return address;
-}
 
-    
-    public void change(String password, String userName) {
-    String sql = "UPDATE [dbo].[UserAccounts] SET [password_hash] = ? WHERE [username]=?";
-    try {
-        PreparedStatement st = connection.prepareStatement(sql);
-        st.setString(1, password);
-        st.setString(2, userName);
-        st.executeUpdate(); // Use executeUpdate() for update operations
-    } catch (SQLException e) {
-        System.out.println(e);
+    public String getAddress(int userId) {
+        String address = null;
+        String sql = "SELECT [address] FROM [dbo].[UserAddresses] WHERE [user_ID] = ?";
+        try {
+            PreparedStatement st = connection.prepareStatement(sql);
+            st.setInt(1, userId);
+            ResultSet rs = st.executeQuery();
+            if (rs.next()) {
+                address = rs.getString("address");
+            }
+        } catch (SQLException e) {
+            System.out.println(e);
+        }
+        return address;
     }
-}
-      // Phương thức để lấy báo cáo đăng ký người dùng
+
+    public void change(String password, String userName) {
+        String sql = "UPDATE [dbo].[UserAccounts] SET [password_hash] = ? WHERE [username]=?";
+        try {
+            PreparedStatement st = connection.prepareStatement(sql);
+            st.setString(1, password);
+            st.setString(2, userName);
+            st.executeUpdate(); // Use executeUpdate() for update operations
+        } catch (SQLException e) {
+            System.out.println(e);
+        }
+    }
+    // Phương thức để lấy báo cáo đăng ký người dùng
+
     public Map<String, Integer> getUserRegistrationReport(String period) {
         String sql = "SELECT dateCreate, COUNT(*) as registration_count FROM UserAccounts WHERE dateCreate >= DATEADD(DAY, -?, GETDATE()) GROUP BY dateCreate";
         Map<String, Integer> report = new HashMap<>();
@@ -175,7 +174,7 @@ public class AccountDAO extends DBContext{
     }
 
     // Phương thức để lấy báo cáo hoạt động người dùng
-      public Map<String, Integer> getUserActivityReport(String period) {
+    public Map<String, Integer> getUserActivityReport(String period) {
         String sql = "";
         if ("day".equals(period)) {
             sql = "SELECT dateCreate, COUNT(*) as activity_count FROM UserAccounts WHERE status = 'active' AND dateCreate >= DATEADD(DAY, -1, GETDATE()) GROUP BY dateCreate";
@@ -215,6 +214,5 @@ public class AccountDAO extends DBContext{
         }
         return report;
     }
-    
-    
+
 }

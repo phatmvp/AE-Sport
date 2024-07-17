@@ -15,13 +15,14 @@ import java.util.logging.Logger;
  */
 public class SettingContext extends DBContext.DBContext {
 
-    public String getLogo() {
+    public String getLogo(String logo) {
         String result = "";
         try {
             String sql = "SELECT [img]\n"
                     + "  FROM [dbo].[ImgSetting]\n"
-                    + "  where [type]='logo'";
+                    + "  where [type]=?";
             PreparedStatement stm = connection.prepareStatement(sql);
+            stm.setString(1, logo);
             ResultSet rs = stm.executeQuery();
             if (rs.next()) {
                 result = rs.getString("img");
@@ -83,13 +84,14 @@ public class SettingContext extends DBContext.DBContext {
         }
     }
 
-    public void updateLogo(String img) {
+    public void updateLogo(String img, String logo) {
         try {
             String sql = "UPDATE [dbo].[ImgSetting]\n"
                     + "   SET [img] = ?\n"
-                    + " WHERE [type]='logo'";
+                    + " WHERE [type]=?";
             PreparedStatement stm = connection.prepareStatement(sql);
             stm.setString(1, img);
+            stm.setString(2, logo);
             stm.executeUpdate();
         } catch (SQLException ex) {
             Logger.getLogger(SettingContext.class.getName()).log(Level.SEVERE, null, ex);

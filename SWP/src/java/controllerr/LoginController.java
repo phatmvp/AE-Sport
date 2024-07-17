@@ -46,9 +46,9 @@ public class LoginController extends HttpServlet {
         String pass = request.getParameter("password");
         String uName = request.getParameter("userName");
         UserAccount U = ADAO.CheckLogin(uName, pass);
-        
+        System.out.println(U);
         // check acccount có tồn tại hay không
-        if (U != null) { 
+        if (U != null) {
             response.getWriter().write("PASS");
             request.getSession().setAttribute("CRRAccount", U);
         } else {
@@ -75,7 +75,7 @@ public class LoginController extends HttpServlet {
         } else {
             UserAccount uA = new UserAccount(userAddress, userName, usserPass, fullName, userEmail, userName);
             // trả về id account mới vừa được insert nếu thành công
-            int newIdInsert = ADAO.insertUserAccount(uA); 
+            int newIdInsert = ADAO.insertUserAccount(uA);
             if (newIdInsert > 0) {
                 // gửi email tới địa chỉ mail vừa được đăng ký
                 Email.sendEmail(userEmail, "AESport, Active you account", "Click this link to active your account: http://localhost:8080/SWP/Account?Action=ActiveAccount&AccountId=" + newIdInsert);
@@ -126,4 +126,3 @@ public class LoginController extends HttpServlet {
     }// </editor-fold>
 
 }
-

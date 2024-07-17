@@ -16,9 +16,9 @@ public abstract class DBContext {
 
     public DBContext() {
         try {
-            String url = "jdbc:sqlserver://MSI\\SQLEXPRESS:1433;databaseName=SWP;encrypt=true;trustServerCertificate=true; ";
-            String user = "phatmvp";
-            String pass = "123";
+                  String url = "jdbc:sqlserver://SOWN\\SQLEXPRESS:1433;databaseName=SWP;encrypt=true;trustServerCertificate=true; ";
+            String user = "son";
+            String pass = "12345678";
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
             connection = DriverManager.getConnection(url, user, pass);
         } catch (ClassNotFoundException | SQLException ex) {

@@ -13,8 +13,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <%
             SettingContext settingDB = new SettingContext();
-            String logo = settingDB.getLogo();
-
+            String logo = settingDB.getLogo("logof");
         %>
     </head>
     <body>

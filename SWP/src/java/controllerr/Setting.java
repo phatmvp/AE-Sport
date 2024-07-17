@@ -21,10 +21,16 @@ public class Setting extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         SettingContext settingDB = new SettingContext();
-        if ("logo".equals(req.getParameter("logo"))) {
+
+        if ("logoh".equals(req.getParameter("logo"))) {
             String img = req.getParameter("img");
-            settingDB.updateLogo(img);
+            settingDB.updateLogo(img, "logoh");
         }
+        if ("logof".equals(req.getParameter("logo"))) {
+            String img = req.getParameter("img");
+            settingDB.updateLogo(img, "logof");
+        }
+
         if ("delete".equals(req.getParameter("type"))) {
             String slide1 = req.getParameter("slide1");
             if (slide1 != null) {
@@ -77,8 +83,11 @@ public class Setting extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         SettingContext settingDB = new SettingContext();
-        String logo = settingDB.getLogo();
-        req.setAttribute("logo", logo);
+        String logoh = settingDB.getLogo("logoh");
+        req.setAttribute("logoh", logoh);
+        String logof = settingDB.getLogo("logof");
+        req.setAttribute("logof", logof);
+
         ArrayList<String> slide1 = settingDB.getSilde("slide1");
 
         req.setAttribute("slide1", slide1);
